@@ -19,14 +19,21 @@ export default function TextForm(props) {
     
     const [text, setText] = useState("");
     return (
-    <div>
-        <h2>{props.heading}</h2>
-        <div className="mb-3">
-            <textarea className="form-control" placeholder="Enter text here" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
-        </div>
-        <button className="btn btn-primary" onClick={handleUpClick} >Convert to uppercase</button>
-        <button className="btn btn-primary mx-3" onClick={handleLowerClick}>Convert to Lowercase</button>
-        
-    </div>
+        <>
+            <div>
+                <h3>{props.heading}</h3>
+                <div className="mb-3">
+                    <textarea className="form-control" placeholder="Enter text here" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                </div>
+                <button className="btn btn-primary" onClick={handleUpClick} >Convert to uppercase</button>
+                <button className="btn btn-primary mx-3" onClick={handleLowerClick}>Convert to Lowercase</button>
+                
+            </div>
+
+            <div className="container my-3 p-2 border">
+                <p>{text.split(' ').length} Words or {text.length} Characters</p>
+                
+            </div>
+    </>
   )
 }
